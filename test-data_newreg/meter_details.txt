@@ -1,0 +1,3 @@
+Org Consumption,Total MB used to store metrics,a2nB20h1o0lc7k3P9xtWS8
+Org Consumption,Total Serverless units used,cPnPIT3XYAziLqIoXtd0KC
+Org Consumption,Number of mapping jobs per day,582ItQgKbOjinyPI3SzaA2

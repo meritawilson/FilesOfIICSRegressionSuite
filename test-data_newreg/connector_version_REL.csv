@@ -1,0 +1,390 @@
+aa_Trial,2
+ActiveCampaign,43000016
+Adabas,42000007
+Adabas CDC,44000012
+Adaptive Insights,9
+Adobe Analytics,42000009
+Adobe Analytics Mass Ingestion,44000013
+Adobe Cloud Platform,370001
+Adobe Experience Platform,43010029
+ADSOv1,44000025
+Advanced FTP,6
+Advanced FTP V2,53
+Advanced FTPS,6
+Advanced FTPS V2,53
+Advanced SFTP,6
+Advanced SFTP V2,53
+Amazon Athena,44000040
+Amazon Dynamo DB,11
+Amazon DynamoDB V2,44000073
+Amazon Kinesis,43000021
+Amazon QuickSight,39000282
+Amazon Redshift v2,45000430
+Amazon S3,41030426
+Amazon S3 v2,45000326
+AmazonRedshift,41030252
+Amplitude,42000010
+AMQP,37016
+Anaplan,7
+AnaplanV2,27
+ArcGIS,3
+Ariba Connector,38040006
+Ariba Hier,38040003
+AribaV2,40010007
+Arrow,43000016
+AS2,7
+AttensityDiscoverNow,3
+Aurora,41000201
+Avature,8
+Azure Blob,41000010
+Azure Data Lake,41010005
+Azure Data Lake Store Gen2,45000278
+Azure DocumentDB,4
+Azure DW,41010005
+Azure DW Database Ingestion,43010009
+Azure EventHub,44000023
+B2B EDI Gateway,51
+B2B EDI Gateway Endpoint,40
+Basic,8
+BigMachines,43010022
+Birst,4
+Birst Cloud Connect,14
+Box,43010009
+Box API,6
+Box Oauth,9
+Business 360,44010276
+Business 360 Events,45000038
+Business 360 FEP Connector,45000095
+CallidusCloud Badgeville,7
+CallidusCloud File Processor,19
+CallidusCloudCommissions,10
+Cassandra,41000023
+Cassandra V2,44000048
+CDIRest2,1
+CDIRest4,9
+CDM Folders,39000040
+CDM Folders V2,43010069
+Chatter,41000016
+ChildConnector1,15
+Cloud File Transfer,5
+Cloud Integration Hub,99
+ClubAssistant,6
+CMMS MVPPlant,4
+ComplexFileProcessor,4
+Concur,9
+Concur V2,43010007
+Connector-rajhellp,1
+connectorGlobalPDMTest,2
+Couchbase,41040006
+Coupa,43010023
+Coupa V2,41040009
+Cvent,39000021
+Data Integration Hub,17
+Databricks Delta,45000380
+Datacom,41000010
+Datacom CDC,44000005
+Db2 Data Map,42000003
+Db2 for i,42000012
+Db2 for i CDC,44000010
+Db2 for LUW CDC,44000011
+Db2 for LUW Database Ingestion,39000004
+Db2 for zOS,42000014
+Db2 for zOS Bulk Load,42000014
+Db2 for zOS CDC,44000010
+Db2 for zOS Image Copy,42000007
+Db2 for zOS Unload File,42000003
+DB2 i5OS Database Ingestion,41020005
+Db2 Warehouse on Cloud,1
+DB2 zOS Database Ingestion,43000012
+db2loader,44000031
+deleteconnector,17
+demo_cdi_jdbc_t,2
+DemoConnector,1030
+DemoConnector2,4
+Domo,13
+Doxee Platform,5
+DQ Exception Management,45000047
+Dropbox,41000019
+DynamoDB,4
+DynamoDBV2AP,41000022
+ElanConnector,3
+Elasticsearch,44000079
+Eloqua,19
+Eloqua REST,1
+Eloqua-Bulk API,43010042
+Epic,3
+Excel,2
+FHIR,45000019
+FhirRestClient,11
+FileIO,41000504
+FileList,41030014
+FileProcessor,43010036
+Generic REST,4
+Google Ads,5
+Google Analytics,43010044
+Google Analytics Mass Ingestion,44000013
+Google Big Query,41000033
+Google Big Query V2,45000527
+Google Cloud Spanner,43000045
+Google Cloud Storage,43000015
+Google Cloud Storage V2,45000150
+Google Play,2
+Google PubSub,44000020
+Google Sheets,15
+Google Sheets V2,7
+GoogleAPI,6
+googleBigTable,9
+GoogleDrive,19
+GreatPlains,5
+Greenplum,45000444
+gsec,1
+Hadoop,38040002
+Hadoop Files,2
+Hadoop Files V2,42000069
+Hive Connector,42000128
+IBM MQ,43010029
+IDMS,40000006
+IDMS CDC,44000005
+IDVExpress,3
+IICSQAConnector_v1,4
+IMS,42000008
+IMS CDC,44000011
+infaconnect_test,1
+infaQAS3,1
+Informatica Connectivity as a Service,41040003
+Informatica Data Prep,2
+Informatica Rev,9
+JD Edwards Enterprise One,37005
+JDBC,43010495
+JDBC_IC,41000318
+JDBCV2,45000113
+Jira,45000121
+Jira Cloud,44000009
+JMS,39010013
+JSON Target,41030010
+Kafka,45000110
+Klaviyo,43000012
+KRB,2
+LDAP,39000010
+LinkedIn,5
+Litmos,16
+magento,4
+Magento V1,43000012
+Magento2,2
+Mailchimp,43000011
+Mailchimp2,1
+Marketo,19
+Marketo REST,43010037
+Marketo V3,45000046
+Marketo2,4
+MemSQL,41010007
+MemSQL V2,2
+Microsoft Azure Blob Storage V2,4
+Microsoft Azure Blob Storage V3,44000042
+Microsoft Azure Cosmos DB SQL API,45000032
+Microsoft Azure Data Lake Store V2,11
+Microsoft Azure Data Lake Store V3,41100026
+Microsoft Azure SQL Data Warehouse V2,43010010
+Microsoft Azure SQL Data Warehouse V3,45000514
+Microsoft Azure Synapse Analytics Database Ingestion,41000011
+Microsoft Dynamics 365 for Operations,43010033
+Microsoft Dynamics 365 for Sales,45000065
+Microsoft Dynamics 365 Mass Ingestion,44000026
+Microsoft Dynamics AX,4
+Microsoft Dynamics AX 2012,8
+Microsoft Dynamics AX 2012_V2,39000288
+Microsoft Dynamics AX V3,347
+Microsoft Dynamics NAV,8
+Microsoft Excel,41010007
+Microsoft OneLake,45000120
+Mixpanel,42000010
+MLLP,44000012
+MockConnector,20
+MongoDB,43010041
+MongoDB Mass Ingestion,41000006
+MongoDB v2,44000107
+MQTT,41000013
+MRISoftware,370014
+MVP Plant Connector,2
+MVP Plant V2,6
+MySQL CDC,44000012
+MySQL Cloud,44000080
+Netezza,45000455
+NetSuite,44000015
+Netsuite Mass Ingestion,40010005
+NetSuite RESTlet,38040004
+NetSuite V2,41040013
+NetsuiteFileCabinet,3
+NewConnector,1
+NICESatmetrix CCI,4
+NICESatmetrixV2,2
+nlbunifyconn,1
+ociConnB,2
+ociConnD,2
+ociConnE,1
+ociConnF,5
+OData,41000173
+Odata Consumer,41030047
+OData V2 Applications,41030020
+OData V2 Protocol Reader,42000029
+OneLakeTest,3
+opcua,44000008
+OpenAir,39020010
+Oracle Business Intelligence Publisher V1,37009
+Oracle CDC,44000011
+Oracle CDC V2,44000011
+Oracle Cloud Object Storage,45000084
+Oracle CRM Cloud V1,1
+Oracle Database Ingestion,41000015
+Oracle EBS,5
+Oracle Financials Cloud,42000004
+Oracle Financials Cloud V1,44000015
+Oracle Fusion Cloud Mass Ingestion,44000011
+Oracle HCM Cloud,42000005
+Oracle HCM Cloud V1,44000016
+OracleCRMOnDemand,9
+OracleInterfaceTable,3
+OrangeHRM,6
+package-PlatformConnQA1,1
+Pardot,43000013
+ParentConnector1,150
+pdmConnTestAuto,1
+pdmPltfmConn,1
+pdmPltfmConnNeverSync,2
+Peoplesoft,3
+Pinecone,1
+platformAutomatedAPIConnector,1
+platformAutomatedConnector,1
+platformQA-Connector-DoNOT-USE,5
+platformQA-Connector-temp,4
+platformQA-ConnectorNeverSync,7
+platformQA-Connectorsyncdnfalse,6
+platformQA-Connectorunify,1
+PlatformqaInfaConnector_R2,1
+PlatformS105,3
+PlatformSfdc,358
+PostgreSQL,45000103
+PostgreSQL CDC,44000006
+Power BI,41040005
+pqaPDMConnectorNeverSync,4
+PSQL_V2,1
+QaConn1,1
+QaConnector,1
+QaConnector_v3,1
+QaLabledConnector_V1,1
+QAMultiLabelConnector,1
+QaPlatformShort_V5,1
+QaPreprocessConnector,1
+QATriLabelConnect,3
+Qlik,3
+Quickbooks,5
+Quickbooks Online,3
+Quickbooks V2,41000215
+Rajnewconnector,2
+RapidMiner,3
+Rapnet,19
+Rave,3
+Redis,44000038
+RegisterPerfConnector_1,3
+RegisterPerfConnector_12,1
+RegisterPerfConnector_7,2
+RegisterPerfConnector_8,1
+RegisterPerfConnector_9,1
+Reltio,3
+ReST,37
+REST V2,44000056
+REST V3,43010100
+Rev,8
+Sagitta,5
+SailiTestConnector,2
+Salesforce,45000474
+Salesforce Analytics,43000496
+Salesforce Application Ingestion,37002
+Salesforce Commerce Cloud,340
+Salesforce Insights,41
+Salesforce Marketing Cloud,41040006
+Salesforce Mass Ingestion,44000023
+SalesforceOAuth,40010008
+Sample CCI AmazonS3,42000025
+Sample Google Big Query V2,44000527
+SAP Bapi,41040042
+SAP BW BEx Query,41000023
+SAP BW Connector,42000039
+SAP Concur,39010491
+SAP HANA,43010055
+SAP HANA CDC,44000009
+SAP HANA Database Ingestion,43000009
+SAP Mass Ingestion,44010016
+SAP ODP,43010037
+SAPIQ,39000013
+SAPTableConnector,44000764
+Satmetrix,14
+Sequential File,42000011
+ServiceNow,45000045
+ServiceNow Mass Ingestion,44000016
+Sharepoint,42010009
+Sharepoint Online,43010029
+shivansh_cachingConn,1
+shivansh_connA,1
+shivansh_connB,3
+Shopify,45000014
+Snowflake,7
+Snowflake Big Data Warehouse,3
+Snowflake Cloud Data Warehouse,11
+Snowflake Cloud Data Warehouse V2,45000496
+SpliceMachineV2,1
+SQL Server CDC,44000009
+Stripe,45000014
+stripe_hierarch,5
+Stripe_Rest,3
+SuccessFactors LMS,4
+SuccessFactors OData,42000018
+SuccessFactors SOAP,3
+SugarCRM,3
+SugarCRM REST,8
+SurveyMonkey,43000011
+Tableau,4
+Tableau V2,348
+Tableau V3,42000006
+Taleo,5
+Taleo Business Edition,4
+Teradata,45000964
+test_delay,18
+TESTJDBC,2
+TFS,3
+thisIsTestifyconn,1
+ThoughtSpot,8
+TM2,5
+Trackwise,5
+Twitter,7
+TwitterV1,2
+UltiPro,74
+UnifyPDMRelConn,2
+Unifytest,17
+Unifytest(raj),18
+Unifytestzipazure,1
+venkataTestAutomatedConnector,1
+Vindicia,6
+vryconpac,5
+VSAM,42000010
+VSAM CDC,44000008
+Webservices,37003
+Webservices V2,38030007
+Workday,80
+Workday Mass Ingestion,44000015
+Workday V2,45000020
+WSConsumer,45000048
+Xactly,41030035
+Xero,43000016
+XML,41030023
+XMLTarget,41030010
+Yellowbrick Data Warehouse,6
+Zendesk,41030012
+Zendesk Mass Ingestion,44000017
+Zendesk V2,41000008
+Zoho,3
+Zuora,41050024
+Zuora REST,3
+Zuora REST V2,360
+ZuoraAQuA,42000002
+ZuoraME,4
