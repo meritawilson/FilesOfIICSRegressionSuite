@@ -1,0 +1,106 @@
+#Parameterize
+#JMeter Bin PATH
+JMETER_BIN_PATH=/data/Dashboard_Automation/Jmeter/apache-jmeter-5.5/bin
+
+#JMeter JTL PATH
+JMETER_JTL_PATH=/data/Dashboard_Automation/Jtl_files
+
+#JMeter Aggregate PATH
+JMETER_AGGREGATE_PATH=/data/Dashboard_Automation/Aggregate_files
+
+#JMeter Lib PATH
+JMETER_LIB_PATH=/data/Dashboard_Automation/Jmeter/apache-jmeter-5.5/lib
+
+#JmeterScript PATH
+JMETER_SCRIPT_PATH=/data/Dashboard_Automation/Scripts/newPlan_Linux.jmx
+
+#Navigate to JMETER BIN PATH
+cd $JMETER_BIN_PATH/ || exit
+
+#rm -rf perf-username-password-tenantId-bearerToken.csv
+#ScriptName_Trim=$(echo "${ScriptName}" | cut -f 1 -d '.')
+ScriptName_Trim=newPlan_Linux
+ScriptName=newPlan_Linux.jmx
+
+#Configure-JTL-Results-FileName
+# Desired JTL Path + ScriptName + Environment + ServiceName + Release + Build + Iteration + Threads + Duration + Build_Number + CSV file suffix
+JTL_Results_File_Name=$JMETER_JTL_PATH/${Result_Filename}.jtl
+echo "${JTL_Results_File_Name}"
+
+
+if [ -f "${JTL_Results_File_Name}" ];
+then
+echo "The Run is already Present with current Release and Build,Iteration"
+echo "--Re-enter the Correct BuildNumber and ReleaseNumber"
+else
+#give permissions to wrte an read the file
+#chmod 755 /data/Dashboard_Automation/Test_Data/Schedulerfile.csv
+chmod 755 /data/Dashboard_Automation/Test_Data/UserIdfile.csv
+chmod 755 /data/Dashboard_Automation/Test_Data/UserIdfile100.csv
+
+#delete the previous csv files before execution
+#rm -rf /data/Dashboard_Automation/Test_Data/Schedulerfile.csv
+rm -rf /data/Dashboard_Automation/Test_Data/UserIdfile.csv
+rm -rf /data/Dashboard_Automation/Test_Data/UserIdfile100.csv
+
+#Execution-Start-Time
+#Execution_Start_Time=$(date '+%Y/%m/%dT%H:%M:%S')
+Execution_Start_Time=$(date --iso-8601=seconds)
+StartTime=$(date +%s)
+
+#Execute Testrun
+sh ${JMETER_BIN_PATH}/jmeter.sh -Djavax.net.ssl.keyStoreType=jks -Djavax.net.ssl.keyStore=${JMETER_BIN_PATH}/metering-service-keystore.jks -Djavax.net.ssl.keyStorePassword=changeit -n -t ${JMETER_SCRIPT_PATH} -Jorg_name_prefix=$org_name_prefix -Jthread_numLoad=$thread_numLoad -Jthread_num=$thread_num -Jramp_time=$ramp_time -Jloop_num=$loop_num -Jma_ip=$ma_ip -Jserver_ip=$server_ip -Jpdm_ip=$pdm_ip -Jusername=$username -Jpassword=$password -Jcon_username=$con_username -Jcon_password=$con_password -JFRS_username=$FRS_username -JFRS_password=$FRS_password -JMig_username=$Mig_username -JMig_password=$Mig_password -JAdmin_password=$Admin_password -JAudit_username=$Audit_username -JAudit_password=$Audit_password  -JFileBasePath=$FileBasePath -Jsch_username=$sch_username -Jsch_password=$sch_password -JV3_username=$V3_username -JV3_password=$V3_password -Jthread_num_notification=$thread_num_notification -Jloop_num_notification=$loop_num_notification -Jvcs_username=$vcs_username -Jvcs_password=$vcs_password -JAC_username=$AC_username -JAC_password=$AC_password -Jscim_username=$scim_username -Jscim_password=$scim_password -JUpref_username=$Upref_username -JUpref_password=$Upref_password -Jnotification_expiry=$notification_expiry -Jloop_numLoad=$loop_numLoad -Jramp_timeLoad=$ramp_timeLoad -Jusername100=$username100 -Jpassword100=$password100 -Jnotification1500org_username=$notification1500org_username -Jnotification1500org_password=$notification1500org_password -Jusernamepdm=$usernamepdm -Jpasswordpdm=$passwordpdm -JtimeZoneId=$timeZoneId -JAgentGroupName=$AgentGroupName -Jproject_prefix=$project_prefix -Jfolder_prefix=$folder_prefix -Jschedule_prefix=$schedule_prefix -Jschedule_prefix100=$schedule_prefix100 -JSchedule_start_time=$Schedule_start_time  -l "${JTL_Results_File_Name}"
+
+#Execution-End-Time
+#Execution_End_Time=$(date '+%Y/%m/%dT%H:%M:%S')
+Execution_End_Time=$(date --iso-8601=seconds)
+EndTime=$(date +%s)
+TestDuration=$(($EndTime - $StartTime))
+echo $TestDuration 
+
+#if user want to persist data to elastic search then he needs to check box the persist data variable while building 
+if [ "${PersistData}" == "true" ];
+then
+#Configure-Temp-Aggregate-Results-FileName
+Aggreate_Temp_Results_File_Name=$JMETER_AGGREGATE_PATH/tmp/$ScriptName_Trim-aggregate_Release_${Release_Num}_build_${Build}.csv
+echo "${Aggreate_Temp_Results_File_Name}"
+
+#temporary csv
+Aggreate_Temp_Results_File_Name_actual=$JMETER_AGGREGATE_PATH/tmp/${Result_Filename}_actual.csv
+echo "${Aggreate_Temp_Results_File_Name_actual}"
+
+#Configure-Aggregate-Results-FileName
+Aggreate_Results_File_Name=/data/Dashboard_Automation/CSVLogs/${Result_Filename}.csv
+echo "${Aggreate_Results_File_Name}"
+
+#Generate aggregate report from jtl
+java -jar $JMETER_LIB_PATH/ext/cmdrunner-2.0.jar --tool Reporter --generate-csv "${Aggreate_Temp_Results_File_Name}" --input-jtl "${JTL_Results_File_Name}" --plugin-type AggregateReport 
+
+#sudo cp ${JTL_Results_File_Name} ${WORKSPACE}
+chmod 755 ${Aggreate_Temp_Results_File_Name}
+
+#Add custom tags to aggregate report except header
+sed "1 ! s/.*/&,${Release_Num},${Release_Iteration},${Build},${loop_num},${ScriptName_Trim},${thread_num},${TestDuration},${Execution_Start_Time},${Execution_End_Time}/" "${Aggreate_Temp_Results_File_Name}" > "${Aggreate_Temp_Results_File_Name_actual}"
+
+#Delete 1st line i.e old header file
+sed -i '1d' "${Aggreate_Temp_Results_File_Name_actual}"
+
+#Add Filebeat/Logstash/Kibana complaint Aggregate header
+sed -i '1 i\Label,Samples,Average,Median,90th,95th,99th,Min,Max,Error,Throughput,ReceivedKBps,StdDev,ReleaseNumber,Release_Iteration,BuildNumber,Loop_Count,ScriptName,UserLoad_Threads,Test_Duration_Seconds,Execution_Start_Time,Execution_End_Time' "${Aggreate_Temp_Results_File_Name_actual}"
+
+#delete the last line of the csv
+sed -i '$d' "${Aggreate_Temp_Results_File_Name_actual}"
+
+#Copy the updated aggregate report to aggregate staging location
+cp "${Aggreate_Temp_Results_File_Name_actual}" "${Aggreate_Results_File_Name}"
+
+#Now delete the previous csv files to save space in MGMTNode
+#sudo chmod 755 $LastbuildTemporaryActualFilename
+#sudo chmod 755 $LastbuildTemporaryFilename
+#sudo chmod 755 $LastbuildAggregateFilename
+
+#sudo rm -rf $LastbuildTemporaryActualFilename
+#sudo rm -rf $LastbuildTemporaryFilename
+#sudo rm -rf $LastbuildAggregateFilename
+fi
+fi
